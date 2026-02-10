@@ -1,1 +1,53 @@
-<script type="module" src="./js/main.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mente Activa - App</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2040/2040504.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Evita que el usuario seleccione texto (hace que parezca más una app nativa) */
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            overflow-x: hidden;
+        }
+        
+        /* Animación suave para las transiciones */
+        #app {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Estilo para las tarjetas del juego de memoria */
+        .grid-cards {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+
+    <div id="app">
+        <div class="flex items-center justify-center min-h-screen">
+            <p class="text-blue-600 font-bold animate-pulse text-xl">Cargando Mente Activa...</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error', err));
+            });
+        }
+    </script>
+</body>
+</html>
