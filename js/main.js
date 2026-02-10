@@ -2,6 +2,8 @@
 import { renderMemoria } from './memoria.js';
 import { renderAhorcado } from './ahorcado.js';
 
+console.log("Main.js cargado correctamente");
+
 const appContainer = document.getElementById('app');
 
 // Estado inicial de la aplicación
