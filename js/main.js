@@ -1,6 +1,7 @@
 // js/main.js
 import { renderMemoria } from './memoria.js';
 import { renderAhorcado } from './ahorcado.js';
+import { renderTriqui } from './triqui.js';
 
 console.log("Main.js cargado correctamente");
 
@@ -109,11 +110,11 @@ export function renderHome() {
                     <span class="font-black text-orange-900 uppercase tracking-tighter">Ahorcado</span>
                 </div>
 
-                <div class="bg-gray-200 p-6 rounded-[2rem] shadow-inner text-center opacity-60 relative overflow-hidden">
-                    <span class="text-6xl block mb-2 grayscale">❌</span>
-                    <span class="font-bold text-gray-500">Triqui</span>
-                    <div class="absolute top-2 right-4 text-2xl">🔒</div>
+                <div id="btn-triqui" class="bg-white p-6 rounded-[2rem] shadow-md text-center cursor-pointer border-b-8 border-purple-400 active:translate-y-1 active:border-b-0 transition-all">
+                     <span class="text-6xl block mb-2">❌</span>
+                     <span class="font-black text-purple-900 uppercase tracking-tighter">Triqui</span>
                 </div>
+
 
                 <div class="bg-gray-200 p-6 rounded-[2rem] shadow-inner text-center opacity-60 relative overflow-hidden">
                     <span class="text-6xl block mb-2 grayscale">📝</span>
@@ -129,6 +130,8 @@ export function renderHome() {
     // Eventos de los juegos
     document.getElementById('btn-memoria').onclick = () => renderMemoria(appContainer, renderHome);
     document.getElementById('btn-ahorcado').onclick = () => renderAhorcado(appContainer, renderHome);
+    document.getElementById('btn-triqui').onclick = () => renderTriqui(appContainer, renderHome);
+
 }
 
 // Iniciar aplicación
