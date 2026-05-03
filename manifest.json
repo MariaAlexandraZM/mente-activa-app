@@ -1,16 +1,16 @@
 {
   "name": "Mente Activa",
   "short_name": "MenteActiva",
-  "start_url": ".",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#eff6ff",
+  "background_color": "#2563eb",
   "theme_color": "#2563eb",
-  "description": "App para agilidad mental en adultos mayores.",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2040/2040504.png",
+      "src": "icono.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
